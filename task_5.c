@@ -23,7 +23,7 @@ char* check_brackets()
     printf("Enter a string sequence which ends by a dot (.)\n");
     while ((c = getche()) != '.')
     {
-        if(i < 3) 
+        if(i < 1000) 
         {
             if (c == '(') 
             {
