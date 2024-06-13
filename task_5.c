@@ -17,13 +17,15 @@
 char* check_brackets()
 {
     int check_count = 0;
+    int negative_check = 1;
     int i = 0;
     char c;
 
     printf("Enter a string sequence which ends by a dot (.)\n");
     while ((c = getche()) != '.')
     {
-        if(i < 1000) 
+        i++;
+        if(i <= 1000) 
         {
             if (c == '(') 
             {
@@ -33,7 +35,10 @@ char* check_brackets()
             {
                 check_count--;
             }
-            i++;
+
+            if (check_count < 0) {
+                negative_check = 0;
+             }
         }
         else
         {
@@ -41,7 +46,7 @@ char* check_brackets()
             break;
         }
     }
-    return (check_count == 0) ? "\nYES" : "\nNO";
+    return (check_count == 0 && negative_check) ? "\nYES" : "\nNO";
 }
 
 
